@@ -5,7 +5,8 @@
         "build:api": "docker build -t pnhack-hono-api .",
         "build:nginx": "docker build -t pnhack-nginx-proxy ./nginx",
         "start": "docker compose up -d --force-recreate",
-        "stop": "docker compose down"
+        "stop": "docker compose down",
+        "test": "docker run --rm -i grafana/k6 run - < ./k6/script.js"
     },
     "dependencies": {
         "hono": "^4.6.8"
