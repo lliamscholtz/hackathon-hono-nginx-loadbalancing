@@ -32,3 +32,9 @@ bun run stop
 To access the API:
 
 http://localhost:3000
+
+To run the k6 test:
+
+```sh
+bun run test
+```
