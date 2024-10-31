@@ -1,0 +1,25 @@
+version: '3'
+services:
+  api1:
+    image: pnhack-hono-api
+    ports:
+      - "3001:1337"
+
+  api2:
+    image: pnhack-hono-api
+    ports:
+      - "3002:1337"
+
+  api3:
+    image: pnhack-hono-api
+    ports:
+      - "3003:1337"
+
+  nginx:
+    image: pnhack-nginx-proxy
+    ports:
+      - "3000:80"
+    depends_on:
+      - api1
+      - api2
+      - api3

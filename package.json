@@ -1,0 +1,16 @@
+{
+    "name": "20241031-simple-hono-api",
+    "scripts": {
+        "dev": "bun run --hot src/index.ts",
+        "build:api": "docker build -t pnhack-hono-api .",
+        "build:nginx": "docker build -t pnhack-nginx-proxy ./nginx",
+        "start": "docker compose up -d --force-recreate",
+        "stop": "docker compose down"
+    },
+    "dependencies": {
+        "hono": "^4.6.8"
+    },
+    "devDependencies": {
+        "@types/bun": "latest"
+    }
+}
